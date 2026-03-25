@@ -1,0 +1,101 @@
+/* Root variables */
+:root {
+  --primary-color: #2a9d8f;
+  --secondary-color: #264653;
+  --accent-color: #e9c46a;
+  --background-color: #f4f4f4;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Body with tropical image + gradient overlay */
+body {
+  background: 
+    linear-gradient(135deg, rgba(42, 157, 143, 0.6), rgba(233, 196, 106, 0.6), rgba(244, 162, 97, 0.6), rgba(38, 70, 83, 0.6)),
+    url('tropical-pattern.png'); /* Replace with your tropical image */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  animation: gradientShift 15s ease infinite;
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  color: var(--secondary-color);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sections styled as white cards */
+section {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Center headings */
+h1, h2, h3 {
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+/* Navigation */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive layout */
+@media (min-width: 600px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 950px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
